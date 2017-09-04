@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPurchaseOrder" targetNamespace="http://tempuri.org/dsPurchaseOrder.xsd" xmlns:mstns="http://tempuri.org/dsPurchaseOrder.xsd" xmlns="http://tempuri.org/dsPurchaseOrder.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DBMaintenanceConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DBMaintenanceConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Fastener.Properties.Settings.GlobalReference.Default.DBMaintenanceConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RichiedentiTableAdapter" GeneratorDataComponentClassName="RichiedentiTableAdapter" Name="Richiedenti" UserDataComponentName="RichiedentiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBMaintenanceConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select 'ANY' as richiedente union all 
+select * from openquery(dbvalsid, 'select distinct ordinac_rig.richiedente from ordinac_rig where richiedente is not null and richiedente &lt;&gt; ''---''')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="richiedente" DataSetColumn="richiedente" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CdRTableAdapter" GeneratorDataComponentClassName="CdRTableAdapter" Name="CdR" UserDataComponentName="CdRTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBMaintenanceConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select 'ANY' as respons, '' as responsabile union all
+
+select * from openquery(dbvalsid, 'select respons, responsabile from responsabili')</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="respons" DataSetColumn="respons" />
+              <Mapping SourceColumn="responsabile" DataSetColumn="responsabile" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="P_GET_ORDERSTableAdapter" GeneratorDataComponentClassName="P_GET_ORDERSTableAdapter" Name="P_GET_ORDERS" UserDataComponentName="P_GET_ORDERSTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBMaintenanceConnectionString (Settings)" DbObjectName="DBMaintenance.dbo.P_GET_ORDERS" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.P_GET_ORDERS</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@richiedente" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@rda" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@fornitore" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@stato_ordine" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@user" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="codice_clifo" DataSetColumn="codice_clifo" />
+              <Mapping SourceColumn="shortname" DataSetColumn="shortname" />
+              <Mapping SourceColumn="ordine" DataSetColumn="ordine" />
+              <Mapping SourceColumn="posiz" DataSetColumn="posiz" />
+              <Mapping SourceColumn="data" DataSetColumn="data" />
+              <Mapping SourceColumn="cod_pagamento" DataSetColumn="cod_pagamento" />
+              <Mapping SourceColumn="stato" DataSetColumn="stato" />
+              <Mapping SourceColumn="articolo" DataSetColumn="articolo" />
+              <Mapping SourceColumn="parte" DataSetColumn="parte" />
+              <Mapping SourceColumn="nota" DataSetColumn="nota" />
+              <Mapping SourceColumn="c_costo" DataSetColumn="c_costo" />
+              <Mapping SourceColumn="descr_conto" DataSetColumn="descr_conto" />
+              <Mapping SourceColumn="data_cons" DataSetColumn="data_cons" />
+              <Mapping SourceColumn="data_cons_orig" DataSetColumn="data_cons_orig" />
+              <Mapping SourceColumn="um" DataSetColumn="um" />
+              <Mapping SourceColumn="qta_ordinata" DataSetColumn="qta_ordinata" />
+              <Mapping SourceColumn="qta_cons" DataSetColumn="qta_cons" />
+              <Mapping SourceColumn="tons" DataSetColumn="tons" />
+              <Mapping SourceColumn="et" DataSetColumn="et" />
+              <Mapping SourceColumn="prezzo" DataSetColumn="prezzo" />
+              <Mapping SourceColumn="importo" DataSetColumn="importo" />
+              <Mapping SourceColumn="cod_progetto" DataSetColumn="cod_progetto" />
+              <Mapping SourceColumn="progetto" DataSetColumn="progetto" />
+              <Mapping SourceColumn="cod_respons" DataSetColumn="cod_respons" />
+              <Mapping SourceColumn="richiedente" DataSetColumn="richiedente" />
+              <Mapping SourceColumn="rda" DataSetColumn="rda" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrdiniAcq_VisibilityTableAdapter" GeneratorDataComponentClassName="OrdiniAcq_VisibilityTableAdapter" Name="OrdiniAcq_Visibility" UserDataComponentName="OrdiniAcq_VisibilityTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBMaintenanceConnectionString (Settings)" DbObjectName="DBMaintenance.dbo.OrdiniAcq_Visibility" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [OrdiniAcq_Visibility] WHERE (([Utente] = @Original_Utente) AND ([CdrAbilitato] = @Original_CdrAbilitato) AND ([UtenteAbilitato] = @Original_UtenteAbilitato) AND ((@IsNull_Valori = 1 AND [Valori] IS NULL) OR ([Valori] = @Original_Valori)) AND ((@IsNull_Username = 1 AND [Username] IS NULL) OR ([Username] = @Original_Username)) AND ((@IsNull_Timestamp = 1 AND [Timestamp] IS NULL) OR ([Timestamp] = @Original_Timestamp)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Utente" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Utente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CdrAbilitato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CdrAbilitato" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UtenteAbilitato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UtenteAbilitato" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Valori" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Valori" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Valori" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Valori" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Username" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Username" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Username" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Username" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Timestamp" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Timestamp" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Timestamp" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Timestamp" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [OrdiniAcq_Visibility] ([Utente], [CdrAbilitato], [UtenteAbilitato], [Valori], [Username], [Timestamp]) VALUES (@Utente, @CdrAbilitato, @UtenteAbilitato, @Valori, @Username, @Timestamp);
+SELECT Utente, CdrAbilitato, UtenteAbilitato, Valori, Username, Timestamp FROM OrdiniAcq_Visibility WHERE (CdrAbilitato = @CdrAbilitato) AND (Utente = @Utente) AND (UtenteAbilitato = @UtenteAbilitato)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Utente" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Utente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CdrAbilitato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CdrAbilitato" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UtenteAbilitato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UtenteAbilitato" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Valori" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Valori" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Username" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Username" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Timestamp" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Timestamp" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Utente, CdrAbilitato, UtenteAbilitato, Valori, Username, Timestamp
+FROM            OrdiniAcq_Visibility
+WHERE        (Utente = @utente)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="utente" ColumnName="Utente" DataSourceName="DBMaintenance.dbo.OrdiniAcq_Visibility" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@utente" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Utente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [OrdiniAcq_Visibility] SET [Utente] = @Utente, [CdrAbilitato] = @CdrAbilitato, [UtenteAbilitato] = @UtenteAbilitato, [Valori] = @Valori, [Username] = @Username, [Timestamp] = @Timestamp WHERE (([Utente] = @Original_Utente) AND ([CdrAbilitato] = @Original_CdrAbilitato) AND ([UtenteAbilitato] = @Original_UtenteAbilitato) AND ((@IsNull_Valori = 1 AND [Valori] IS NULL) OR ([Valori] = @Original_Valori)) AND ((@IsNull_Username = 1 AND [Username] IS NULL) OR ([Username] = @Original_Username)) AND ((@IsNull_Timestamp = 1 AND [Timestamp] IS NULL) OR ([Timestamp] = @Original_Timestamp)));
+SELECT Utente, CdrAbilitato, UtenteAbilitato, Valori, Username, Timestamp FROM OrdiniAcq_Visibility WHERE (CdrAbilitato = @CdrAbilitato) AND (Utente = @Utente) AND (UtenteAbilitato = @UtenteAbilitato)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Utente" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Utente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@CdrAbilitato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CdrAbilitato" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@UtenteAbilitato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UtenteAbilitato" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Valori" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Valori" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Username" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Username" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Timestamp" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Timestamp" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Utente" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Utente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_CdrAbilitato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="CdrAbilitato" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_UtenteAbilitato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="UtenteAbilitato" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Valori" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Valori" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_Valori" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Valori" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Username" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Username" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Username" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Username" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Timestamp" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Timestamp" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Timestamp" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Timestamp" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Utente" DataSetColumn="Utente" />
+              <Mapping SourceColumn="CdrAbilitato" DataSetColumn="CdrAbilitato" />
+              <Mapping SourceColumn="UtenteAbilitato" DataSetColumn="UtenteAbilitato" />
+              <Mapping SourceColumn="Valori" DataSetColumn="Valori" />
+              <Mapping SourceColumn="Username" DataSetColumn="Username" />
+              <Mapping SourceColumn="Timestamp" DataSetColumn="Timestamp" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DBMaintenanceConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteQuery">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM [OrdiniAcq_Visibility] WHERE (([Utente] = @Utente) AND ([CdrAbilitato] = @CdrAbilitato) AND ([UtenteAbilitato] = @UtenteAbilitato))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Utente" ColumnName="Utente" DataSourceName="DBMaintenance.dbo.OrdiniAcq_Visibility" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@Utente" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Utente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="CdrAbilitato" ColumnName="CdrAbilitato" DataSourceName="DBMaintenance.dbo.OrdiniAcq_Visibility" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@CdrAbilitato" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="CdrAbilitato" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UtenteAbilitato" ColumnName="UtenteAbilitato" DataSourceName="DBMaintenance.dbo.OrdiniAcq_Visibility" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@UtenteAbilitato" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="UtenteAbilitato" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DBMaintenanceConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [OrdiniAcq_Visibility] ([Utente], [CdrAbilitato], [UtenteAbilitato], [Valori], [Username], [Timestamp]) VALUES (@Utente, @CdrAbilitato, @UtenteAbilitato, @Valori, system_user, getdate())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Utente" ColumnName="Utente" DataSourceName="DBMaintenance.dbo.OrdiniAcq_Visibility" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@Utente" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="Utente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="CdrAbilitato" ColumnName="CdrAbilitato" DataSourceName="DBMaintenance.dbo.OrdiniAcq_Visibility" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@CdrAbilitato" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="CdrAbilitato" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UtenteAbilitato" ColumnName="UtenteAbilitato" DataSourceName="DBMaintenance.dbo.OrdiniAcq_Visibility" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@UtenteAbilitato" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="UtenteAbilitato" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Valori" ColumnName="Valori" DataSourceName="DBMaintenance.dbo.OrdiniAcq_Visibility" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@Valori" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="Valori" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPurchaseOrder" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsPurchaseOrder" msprop:Generator_UserDSName="dsPurchaseOrder">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Richiedenti" msprop:Generator_TableClassName="RichiedentiDataTable" msprop:Generator_TableVarName="tableRichiedenti" msprop:Generator_TablePropName="Richiedenti" msprop:Generator_RowDeletingName="RichiedentiRowDeleting" msprop:Generator_RowChangingName="RichiedentiRowChanging" msprop:Generator_RowEvHandlerName="RichiedentiRowChangeEventHandler" msprop:Generator_RowDeletedName="RichiedentiRowDeleted" msprop:Generator_UserTableName="Richiedenti" msprop:Generator_RowChangedName="RichiedentiRowChanged" msprop:Generator_RowEvArgName="RichiedentiRowChangeEvent" msprop:Generator_RowClassName="RichiedentiRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="richiedente" msprop:Generator_ColumnVarNameInTable="columnrichiedente" msprop:Generator_ColumnPropNameInRow="richiedente" msprop:Generator_ColumnPropNameInTable="richiedenteColumn" msprop:Generator_UserColumnName="richiedente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="48" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CdR" msprop:Generator_TableClassName="CdRDataTable" msprop:Generator_TableVarName="tableCdR" msprop:Generator_TablePropName="CdR" msprop:Generator_RowDeletingName="CdRRowDeleting" msprop:Generator_RowChangingName="CdRRowChanging" msprop:Generator_RowEvHandlerName="CdRRowChangeEventHandler" msprop:Generator_RowDeletedName="CdRRowDeleted" msprop:Generator_UserTableName="CdR" msprop:Generator_RowChangedName="CdRRowChanged" msprop:Generator_RowEvArgName="CdRRowChangeEvent" msprop:Generator_RowClassName="CdRRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="respons" msprop:Generator_ColumnVarNameInTable="columnrespons" msprop:Generator_ColumnPropNameInRow="respons" msprop:Generator_ColumnPropNameInTable="responsColumn" msprop:Generator_UserColumnName="respons" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="responsabile" msprop:Generator_ColumnVarNameInTable="columnresponsabile" msprop:Generator_ColumnPropNameInRow="responsabile" msprop:Generator_ColumnPropNameInTable="responsabileColumn" msprop:Generator_UserColumnName="responsabile" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="P_GET_ORDERS" msprop:Generator_TableClassName="P_GET_ORDERSDataTable" msprop:Generator_TableVarName="tableP_GET_ORDERS" msprop:Generator_TablePropName="P_GET_ORDERS" msprop:Generator_RowDeletingName="P_GET_ORDERSRowDeleting" msprop:Generator_RowChangingName="P_GET_ORDERSRowChanging" msprop:Generator_RowEvHandlerName="P_GET_ORDERSRowChangeEventHandler" msprop:Generator_RowDeletedName="P_GET_ORDERSRowDeleted" msprop:Generator_UserTableName="P_GET_ORDERS" msprop:Generator_RowChangedName="P_GET_ORDERSRowChanged" msprop:Generator_RowEvArgName="P_GET_ORDERSRowChangeEvent" msprop:Generator_RowClassName="P_GET_ORDERSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codice_clifo" msprop:Generator_ColumnVarNameInTable="columncodice_clifo" msprop:Generator_ColumnPropNameInRow="codice_clifo" msprop:Generator_ColumnPropNameInTable="codice_clifoColumn" msprop:Generator_UserColumnName="codice_clifo" type="xs:int" minOccurs="0" />
+              <xs:element name="shortname" msprop:Generator_ColumnVarNameInTable="columnshortname" msprop:Generator_ColumnPropNameInRow="shortname" msprop:Generator_ColumnPropNameInTable="shortnameColumn" msprop:Generator_UserColumnName="shortname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ordine" msprop:Generator_ColumnVarNameInTable="columnordine" msprop:Generator_ColumnPropNameInRow="ordine" msprop:Generator_ColumnPropNameInTable="ordineColumn" msprop:Generator_UserColumnName="ordine" type="xs:int" />
+              <xs:element name="posiz" msprop:Generator_ColumnVarNameInTable="columnposiz" msprop:Generator_ColumnPropNameInRow="posiz" msprop:Generator_ColumnPropNameInTable="posizColumn" msprop:Generator_UserColumnName="posiz" type="xs:int" />
+              <xs:element name="data" msprop:Generator_ColumnVarNameInTable="columndata" msprop:Generator_ColumnPropNameInRow="data" msprop:Generator_ColumnPropNameInTable="dataColumn" msprop:Generator_UserColumnName="data" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cod_pagamento" msprop:Generator_ColumnVarNameInTable="columncod_pagamento" msprop:Generator_ColumnPropNameInRow="cod_pagamento" msprop:Generator_ColumnPropNameInTable="cod_pagamentoColumn" msprop:Generator_UserColumnName="cod_pagamento" type="xs:int" minOccurs="0" />
+              <xs:element name="stato" msprop:Generator_ColumnVarNameInTable="columnstato" msprop:Generator_ColumnPropNameInRow="stato" msprop:Generator_ColumnPropNameInTable="statoColumn" msprop:Generator_UserColumnName="stato" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="articolo" msprop:Generator_ColumnVarNameInTable="columnarticolo" msprop:Generator_ColumnPropNameInRow="articolo" msprop:Generator_ColumnPropNameInTable="articoloColumn" msprop:Generator_UserColumnName="articolo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="parte" msprop:Generator_ColumnVarNameInTable="columnparte" msprop:Generator_ColumnPropNameInRow="parte" msprop:Generator_ColumnPropNameInTable="parteColumn" msprop:Generator_UserColumnName="parte" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="24" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nota" msprop:Generator_ColumnVarNameInTable="columnnota" msprop:Generator_ColumnPropNameInRow="nota" msprop:Generator_ColumnPropNameInTable="notaColumn" msprop:Generator_UserColumnName="nota" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="c_costo" msprop:Generator_ColumnVarNameInTable="columnc_costo" msprop:Generator_ColumnPropNameInRow="c_costo" msprop:Generator_ColumnPropNameInTable="c_costoColumn" msprop:Generator_UserColumnName="c_costo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="descr_conto" msprop:Generator_ColumnVarNameInTable="columndescr_conto" msprop:Generator_ColumnPropNameInRow="descr_conto" msprop:Generator_ColumnPropNameInTable="descr_contoColumn" msprop:Generator_UserColumnName="descr_conto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="48" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data_cons" msprop:Generator_ColumnVarNameInTable="columndata_cons" msprop:Generator_ColumnPropNameInRow="data_cons" msprop:Generator_ColumnPropNameInTable="data_consColumn" msprop:Generator_UserColumnName="data_cons" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="data_cons_orig" msprop:Generator_ColumnVarNameInTable="columndata_cons_orig" msprop:Generator_ColumnPropNameInRow="data_cons_orig" msprop:Generator_ColumnPropNameInTable="data_cons_origColumn" msprop:Generator_UserColumnName="data_cons_orig" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="um" msprop:Generator_ColumnVarNameInTable="columnum" msprop:Generator_ColumnPropNameInRow="um" msprop:Generator_ColumnPropNameInTable="umColumn" msprop:Generator_UserColumnName="um" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="qta_ordinata" msprop:Generator_ColumnVarNameInTable="columnqta_ordinata" msprop:Generator_ColumnPropNameInRow="qta_ordinata" msprop:Generator_ColumnPropNameInTable="qta_ordinataColumn" msprop:Generator_UserColumnName="qta_ordinata" type="xs:double" minOccurs="0" />
+              <xs:element name="qta_cons" msprop:Generator_ColumnVarNameInTable="columnqta_cons" msprop:Generator_ColumnPropNameInRow="qta_cons" msprop:Generator_ColumnPropNameInTable="qta_consColumn" msprop:Generator_UserColumnName="qta_cons" type="xs:double" minOccurs="0" />
+              <xs:element name="tons" msprop:Generator_ColumnVarNameInTable="columntons" msprop:Generator_ColumnPropNameInRow="tons" msprop:Generator_ColumnPropNameInTable="tonsColumn" msprop:Generator_UserColumnName="tons" type="xs:double" minOccurs="0" />
+              <xs:element name="et" msprop:Generator_ColumnVarNameInTable="columnet" msprop:Generator_ColumnPropNameInRow="et" msprop:Generator_ColumnPropNameInTable="etColumn" msprop:Generator_UserColumnName="et" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="prezzo" msprop:Generator_ColumnVarNameInTable="columnprezzo" msprop:Generator_ColumnPropNameInRow="prezzo" msprop:Generator_ColumnPropNameInTable="prezzoColumn" msprop:Generator_UserColumnName="prezzo" type="xs:double" minOccurs="0" />
+              <xs:element name="importo" msprop:Generator_ColumnVarNameInTable="columnimporto" msprop:Generator_ColumnPropNameInRow="importo" msprop:Generator_ColumnPropNameInTable="importoColumn" msprop:Generator_UserColumnName="importo" type="xs:double" minOccurs="0" />
+              <xs:element name="cod_progetto" msprop:Generator_ColumnVarNameInTable="columncod_progetto" msprop:Generator_ColumnPropNameInRow="cod_progetto" msprop:Generator_ColumnPropNameInTable="cod_progettoColumn" msprop:Generator_UserColumnName="cod_progetto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="progetto" msprop:Generator_ColumnVarNameInTable="columnprogetto" msprop:Generator_ColumnPropNameInRow="progetto" msprop:Generator_ColumnPropNameInTable="progettoColumn" msprop:Generator_UserColumnName="progetto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="96" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cod_respons" msprop:Generator_ColumnVarNameInTable="columncod_respons" msprop:Generator_ColumnPropNameInRow="cod_respons" msprop:Generator_ColumnPropNameInTable="cod_responsColumn" msprop:Generator_UserColumnName="cod_respons" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="richiedente" msprop:Generator_ColumnVarNameInTable="columnrichiedente" msprop:Generator_ColumnPropNameInRow="richiedente" msprop:Generator_ColumnPropNameInTable="richiedenteColumn" msprop:Generator_UserColumnName="richiedente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="48" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="rda" msprop:Generator_ColumnVarNameInTable="columnrda" msprop:Generator_ColumnPropNameInRow="rda" msprop:Generator_ColumnPropNameInTable="rdaColumn" msprop:Generator_UserColumnName="rda" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OrdiniAcq_Visibility" msprop:Generator_TableClassName="OrdiniAcq_VisibilityDataTable" msprop:Generator_TableVarName="tableOrdiniAcq_Visibility" msprop:Generator_TablePropName="OrdiniAcq_Visibility" msprop:Generator_RowDeletingName="OrdiniAcq_VisibilityRowDeleting" msprop:Generator_RowChangingName="OrdiniAcq_VisibilityRowChanging" msprop:Generator_RowEvHandlerName="OrdiniAcq_VisibilityRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdiniAcq_VisibilityRowDeleted" msprop:Generator_UserTableName="OrdiniAcq_Visibility" msprop:Generator_RowChangedName="OrdiniAcq_VisibilityRowChanged" msprop:Generator_RowEvArgName="OrdiniAcq_VisibilityRowChangeEvent" msprop:Generator_RowClassName="OrdiniAcq_VisibilityRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Utente" msprop:Generator_ColumnVarNameInTable="columnUtente" msprop:Generator_ColumnPropNameInRow="Utente" msprop:Generator_ColumnPropNameInTable="UtenteColumn" msprop:Generator_UserColumnName="Utente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CdrAbilitato" msprop:Generator_ColumnVarNameInTable="columnCdrAbilitato" msprop:Generator_ColumnPropNameInRow="CdrAbilitato" msprop:Generator_ColumnPropNameInTable="CdrAbilitatoColumn" msprop:Generator_UserColumnName="CdrAbilitato">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UtenteAbilitato" msprop:Generator_ColumnVarNameInTable="columnUtenteAbilitato" msprop:Generator_ColumnPropNameInRow="UtenteAbilitato" msprop:Generator_ColumnPropNameInTable="UtenteAbilitatoColumn" msprop:Generator_UserColumnName="UtenteAbilitato">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Valori" msprop:Generator_ColumnVarNameInTable="columnValori" msprop:Generator_ColumnPropNameInRow="Valori" msprop:Generator_ColumnPropNameInTable="ValoriColumn" msprop:Generator_UserColumnName="Valori" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Username" msprop:Generator_ColumnVarNameInTable="columnUsername" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_UserColumnName="Username" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Timestamp" msprop:Generator_ColumnVarNameInTable="columnTimestamp" msprop:Generator_ColumnPropNameInRow="Timestamp" msprop:Generator_ColumnPropNameInTable="TimestampColumn" msprop:Generator_UserColumnName="Timestamp" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:OrdiniAcq_Visibility" />
+      <xs:field xpath="mstns:Utente" />
+      <xs:field xpath="mstns:CdrAbilitato" />
+      <xs:field xpath="mstns:UtenteAbilitato" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

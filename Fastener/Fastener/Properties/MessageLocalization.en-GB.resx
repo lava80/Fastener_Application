@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="activity_act_with_no_report" xml:space="preserve">
+    <value>You have activity not associated to any report</value>
+  </data>
+  <data name="activity_button_modify" xml:space="preserve">
+    <value>MODIFY</value>
+  </data>
+  <data name="activity_button_save" xml:space="preserve">
+    <value>SAVE</value>
+  </data>
+  <data name="activity_confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="activity_confirm_bulk_delete" xml:space="preserve">
+    <value>Deleting selected activities</value>
+  </data>
+  <data name="activity_man_type_not_selected" xml:space="preserve">
+    <value>No maintenance type selected</value>
+  </data>
+  <data name="activity_overlap" xml:space="preserve">
+    <value>Acitivity overlaps with already inserted activities</value>
+  </data>
+  <data name="activity_report_generated" xml:space="preserve">
+    <value>Created report number: </value>
+  </data>
+  <data name="activity_report_many_hours_confirm" xml:space="preserve">
+    <value>Total hours fpor selected activities exceed 12. Sure to proceed in report generation? </value>
+  </data>
+  <data name="activity_report_too_many_hours" xml:space="preserve">
+    <value>Too many hours selected for a report to be generated</value>
+  </data>
+  <data name="activity_ts_mismatch" xml:space="preserve">
+    <value>Activity timestamp mismatch</value>
+  </data>
+  <data name="ana_cannot_create_superuser" xml:space="preserve">
+    <value>Insufficient rights to create a super user profile</value>
+  </data>
+  <data name="events_driver_perc_exceeds" xml:space="preserve">
+    <value>Required percentage exceeds total available</value>
+  </data>
+  <data name="event_save_button_text_insert" xml:space="preserve">
+    <value>SAVE EVENT</value>
+  </data>
+  <data name="event_save_button_text_modify" xml:space="preserve">
+    <value>UPDATE EVENT</value>
+  </data>
+  <data name="fmrLogin_PasswordNonValida" xml:space="preserve">
+    <value>Invalid password</value>
+  </data>
+  <data name="frmLogin_Connessione" xml:space="preserve">
+    <value>No database connection</value>
+  </data>
+  <data name="frmLogin_Errore" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="frmLogin_ErroreCaricamenteUtente" xml:space="preserve">
+    <value>Failed to load user</value>
+  </data>
+  <data name="frmLogin_UtenteNonTrovato" xml:space="preserve">
+    <value>No user found</value>
+  </data>
+  <data name="frmPass_PasswordCorta" xml:space="preserve">
+    <value>Password too short</value>
+  </data>
+  <data name="frmPass_PasswordNonCorrispondente" xml:space="preserve">
+    <value>Password mismatch</value>
+  </data>
+  <data name="frmPass_PasswordOK" xml:space="preserve">
+    <value>Password OK</value>
+  </data>
+  <data name="man_plant_confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="man_plant_delete_are" xml:space="preserve">
+    <value>Delete selected area ?</value>
+  </data>
+  <data name="man_plant_delete_com" xml:space="preserve">
+    <value>Delete selected component ?</value>
+  </data>
+  <data name="man_plant_delete_imp" xml:space="preserve">
+    <value>Delete selected plant ?</value>
+  </data>
+  <data name="man_plant_delete_mac" xml:space="preserve">
+    <value>Delete selected machine ?</value>
+  </data>
+  <data name="man_plant_delete_scm" xml:space="preserve">
+    <value>Delete selected sub component ?</value>
+  </data>
+  <data name="event_cannot_cancel" xml:space="preserve">
+    <value>Unable to delete event</value>
+  </data>
+  <data name="event_copy_too_many_rows" xml:space="preserve">
+    <value>Only one event can be copied</value>
+  </data>
+  <data name="quit_even_if_act_no_report" xml:space="preserve">
+    <value>Do you wish to close even if activities not associated to a report are present?</value>
+  </data>
+  <data name="activity_wrong_min_range" xml:space="preserve">
+    <value>Incorrect time interval. Please check</value>
+  </data>
+  <data name="reports_resend" xml:space="preserve">
+    <value>This report has already been sent. Do you really wish to send again report N. </value>
+  </data>
+  <data name="man_plant_delete_CA" xml:space="preserve">
+    <value>Delete selected CA?</value>
+  </data>
+  <data name="man_plant_delete_scheda" xml:space="preserve">
+    <value>Delete selected card ?</value>
+  </data>
+</root>

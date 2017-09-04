@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\ExtensionPack\4.0\MSBuild.ExtensionPack.tasks" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4591AABA-2636-48E6-9D98-693BA17AA82C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fastener</RootNamespace>
+    <AssemblyName>Fastener</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>\\metit.lan\dfsvr\SoftwareVR\Fastener\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationVersion>1.4.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icona.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>27A273AA395924D8110FF460788BDB4BB37863F5</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Fastener_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseClasses\ActivitySubmitEventArgs.cs" />
+    <Compile Include="BaseClasses\ComboBoxReadOnly.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\Constants.cs" />
+    <Compile Include="BaseClasses\InterfaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\InterfaceForm.designer.cs">
+      <DependentUpon>InterfaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\NullableDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\ToolbarButtonOriz.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\CultureManager.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\DoubleBufferedClasses.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\PopUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseClasses\PopUpForm.designer.cs">
+      <DependentUpon>PopUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseClasses\ToolbarButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlActivityEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlActivityEvent.Designer.cs">
+      <DependentUpon>CtrlActivityEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlActivity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlActivity.Designer.cs">
+      <DependentUpon>CtrlActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlManCA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlManCA.Designer.cs">
+      <DependentUpon>CtrlManCA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlPlantSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlPlantSelector.Designer.cs">
+      <DependentUpon>CtrlPlantSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlAreaThumbnail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlAreaThumbnail.Designer.cs">
+      <DependentUpon>CtrlAreaThumbnail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlDataEntryContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlDataEntryContainer.Designer.cs">
+      <DependentUpon>CtrlDataEntryContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlDateTimePicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlDateTimePicker.Designer.cs">
+      <DependentUpon>CtrlDateTimePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlEvent.Designer.cs">
+      <DependentUpon>CtrlEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlImpThumbnail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlImpThumbnail.Designer.cs">
+      <DependentUpon>CtrlImpThumbnail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlManAziende.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlManAziende.Designer.cs">
+      <DependentUpon>CtrlManAziende.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlManCDC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlManCDC.Designer.cs">
+      <DependentUpon>CtrlManCDC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlManImpianti.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlManImpianti.Designer.cs">
+      <DependentUpon>CtrlManImpianti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlManPermessi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlManPermessi.Designer.cs">
+      <DependentUpon>CtrlManPermessi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlManSistema.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlManSistema.Designer.cs">
+      <DependentUpon>CtrlManSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlManContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlManContainer.Designer.cs">
+      <DependentUpon>CtrlManContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlManUtenti.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlManUtenti.Designer.cs">
+      <DependentUpon>CtrlManUtenti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlPurchaseOrders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlPurchaseOrders.Designer.cs">
+      <DependentUpon>CtrlPurchaseOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlRichiesteLavorazioni.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlRichiesteLavorazioni.Designer.cs">
+      <DependentUpon>CtrlRichiesteLavorazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controlli\CtrlTranslations.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controlli\CtrlTranslations.Designer.cs">
+      <DependentUpon>CtrlTranslations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsPurchaseOrder.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPurchaseOrder.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsRichiesteLavorazioni.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRichiesteLavorazioni.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\Assegna_RichiesteLavorazioni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\Assegna_RichiesteLavorazioni.Designer.cs">
+      <DependentUpon>Assegna_RichiesteLavorazioni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\DaySelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\DaySelector.Designer.cs">
+      <DependentUpon>DaySelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmServerReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmServerReport.Designer.cs">
+      <DependentUpon>frmServerReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsActivities2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsActivities.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsEvents.cs">
+      <DependentUpon>dsEvents.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet\dsEvents.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEvents.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsMaintenance.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsMaintenance.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsServerReports.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsServerReports.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\dsUTE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsUTE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPass.designer.cs">
+      <DependentUpon>frmPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRapportino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRapportino.Designer.cs">
+      <DependentUpon>frmRapportino.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\MessageLocalization.en-GB.Designer.cs">
+      <DependentUpon>MessageLocalization.en-GB.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\MessageLocalization.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageLocalization.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubClasses\MD5.cs" />
+    <Compile Include="SubClasses\TransactionHelper.cs" />
+    <Compile Include="SubClasses\Utente.cs" />
+    <Compile Include="SubClasses\Utility.cs" />
+    <EmbeddedResource Include="BaseClasses\InterfaceForm.resx">
+      <DependentUpon>InterfaceForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseClasses\PopUpForm.resx">
+      <DependentUpon>PopUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlActivityEvent.resx">
+      <DependentUpon>CtrlActivityEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlActivity.resx">
+      <DependentUpon>CtrlActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlManCA.resx">
+      <DependentUpon>CtrlManCA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlPlantSelector.resx">
+      <DependentUpon>CtrlPlantSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlAreaThumbnail.resx">
+      <DependentUpon>CtrlAreaThumbnail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlDataEntryContainer.resx">
+      <DependentUpon>CtrlDataEntryContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlDateTimePicker.resx">
+      <DependentUpon>CtrlDateTimePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlEvent.resx">
+      <DependentUpon>CtrlEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlImpThumbnail.resx">
+      <DependentUpon>CtrlImpThumbnail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlManAziende.resx">
+      <DependentUpon>CtrlManAziende.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlManCDC.resx">
+      <DependentUpon>CtrlManCDC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlManImpianti.resx">
+      <DependentUpon>CtrlManImpianti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlManPermessi.resx">
+      <DependentUpon>CtrlManPermessi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlManSistema.resx">
+      <DependentUpon>CtrlManSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlManContainer.resx">
+      <DependentUpon>CtrlManContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlManUtenti.resx">
+      <DependentUpon>CtrlManUtenti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlPurchaseOrders.resx">
+      <DependentUpon>CtrlPurchaseOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlRichiesteLavorazioni.resx">
+      <DependentUpon>CtrlRichiesteLavorazioni.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controlli\CtrlTranslations.resx">
+      <DependentUpon>CtrlTranslations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\Assegna_RichiesteLavorazioni.resx">
+      <DependentUpon>Assegna_RichiesteLavorazioni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\DaySelector.resx">
+      <DependentUpon>DaySelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmServerReport.resx">
+      <DependentUpon>frmServerReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.af-ZA.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.af.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.en-AU.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.en-GB.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.en.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.en-GB.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.en.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPass.en.resx">
+      <DependentUpon>frmPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPass.resx">
+      <DependentUpon>frmPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRapportino.resx">
+      <DependentUpon>frmRapportino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\MessageLocalization.en-GB.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageLocalization.en-GB.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\MessageLocalization.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageLocalization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\dsActivities.xsc">
+      <DependentUpon>dsActivities.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsActivities.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsActivities2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsActivities.xss">
+      <DependentUpon>dsActivities.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsEvents.xsc">
+      <DependentUpon>dsEvents.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsEvents.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEvents.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsEvents.xss">
+      <DependentUpon>dsEvents.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsMaintenance.xsc">
+      <DependentUpon>dsMaintenance.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsMaintenance.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsMaintenance.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsMaintenance.xss">
+      <DependentUpon>dsMaintenance.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsPurchaseOrder.xsc">
+      <DependentUpon>dsPurchaseOrder.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsPurchaseOrder.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPurchaseOrder.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsPurchaseOrder.xss">
+      <DependentUpon>dsPurchaseOrder.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsReport.xsc">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsReport.xss">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsRichiesteLavorazioni.xsc">
+      <DependentUpon>dsRichiesteLavorazioni.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsRichiesteLavorazioni.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRichiesteLavorazioni.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsRichiesteLavorazioni.xss">
+      <DependentUpon>dsRichiesteLavorazioni.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsServerReports.xsc">
+      <DependentUpon>dsServerReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsServerReports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsServerReports.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsServerReports.xss">
+      <DependentUpon>dsServerReports.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsUTE.xsc">
+      <DependentUpon>dsUTE.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\dsUTE.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsUTE.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet\dsUTE.xss">
+      <DependentUpon>dsUTE.xsd</DependentUpon>
+    </None>
+    <None Include="Fastener_1_TemporaryKey.pfx" />
+    <None Include="Fastener_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login Form.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo metinvest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo metinvest trasparente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo metinvest trasparente1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout bottoni oriz.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\metinvest gray star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\metinvest gray star1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\metinvest gray star2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout bottoni.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout bottoni inattivi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout bottoni highlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout bottoni oriz highlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout bottoni oriz inattivi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout bottoni oriz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activity layout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activity layout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button ffw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activity layout2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\activity layout3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button bw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button fbw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icona.ico" />
+    <None Include="Resources\activity layout 25b modifica.png" />
+    <None Include="Resources\activity layout 25b.png" />
+    <None Include="Resources\Excel-Import finished1.png" />
+    <None Include="Resources\Excel-Import finished.png" />
+    <None Include="Resources\SendReq.png" />
+    <None Include="Resources\SendDone.png" />
+    <None Include="Resources\F_ActivityGrouped.sql" />
+    <None Include="Resources\reports_button.png" />
+    <None Include="Resources\maximize1.png" />
+    <None Include="Resources\restore.png" />
+    <None Include="Resources\maximize.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\activity layout events7.png" />
+    <None Include="Resources\activity layout 25.png" />
+    <None Include="Resources\activity layout 2 - modifica.png" />
+    <None Include="Resources\Report-Editor2.png" />
+    <None Include="Resources\Report-Editor1.png" />
+    <None Include="Resources\Report-Editor.png" />
+    <None Include="Resources\activity layout events6.png" />
+    <None Include="Resources\activity layout events5.png" />
+    <None Include="Resources\activity layout events4.png" />
+    <None Include="Resources\events layout 22.png" />
+    <None Include="Resources\events layout 21.png" />
+    <None Include="Resources\events layout 2.png" />
+    <None Include="Resources\activity layout events3.png" />
+    <None Include="Resources\activity layout events2.png" />
+    <None Include="Resources\activity layout events1.png" />
+    <None Include="Resources\activity layout events.png" />
+    <None Include="Resources\events layout1.png" />
+    <None Include="Resources\events layout.png" />
+    <None Include="Resources\activity layout 24.png" />
+    <None Include="Resources\activity layout 23.png" />
+    <None Include="Resources\activity layout 22.png" />
+    <None Include="Resources\activity layout 21.png" />
+    <None Include="Resources\activity layout 2.png" />
+    <None Include="Resources\icona.png" />
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\Anagrafica Permessi.png" />
+    <None Include="Resources\anagrafica utenti1.png" />
+    <None Include="Resources\anagrafica utenti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.WinForms">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Types">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+-->
+  <Target Name="BeforeCompile" Condition="'$(Configuration)' == 'Release'">
+    <FormatVersion Version="$(ApplicationVersion)" Revision="$(ApplicationRevision)">
+      <Output TaskParameter="OutputVersion" PropertyName="AssemblyVersionToUse" />
+    </FormatVersion>
+    <AssemblyInfo AssemblyInfoFiles="Properties\AssemblyInfo.cs" AssemblyVersion="$(AssemblyVersionToUse)" AssemblyFileVersion="$(AssemblyVersionToUse)" />
+  </Target>
+</Project>
