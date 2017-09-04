@@ -1,0 +1,17 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Fastener.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DEFAULT_PASSWORD" Type="System.String" Scope="User">
+      <Value Profile="(Default)">baaab6fa3b287456d2ff691027920826</Value>
+    </Setting>
+    <Setting Name="DBMaintenanceConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=vrmss01.metit.lan;Initial Catalog=DBMaintenance;User Id=Fastener_user;Password=Fast123!!; MultipleActiveResultSets=true&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=vrmss01.metit.lan;Initial Catalog=DBMaintenance;User Id=Fastener_user;Password=Fast123!!; MultipleActiveResultSets=true</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

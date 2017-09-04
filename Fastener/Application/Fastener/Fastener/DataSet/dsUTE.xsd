@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsUTE" targetNamespace="http://tempuri.org/dsUTE.xsd" xmlns:mstns="http://tempuri.org/dsUTE.xsd" xmlns="http://tempuri.org/dsUTE.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DBMaintenanceConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DBMaintenanceConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Fastener.Properties.Settings.GlobalReference.Default.DBMaintenanceConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Man_Ana_UTETableAdapter" GeneratorDataComponentClassName="Man_Ana_UTETableAdapter" Name="Man_Ana_UTE" UserDataComponentName="Man_Ana_UTETableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBMaintenanceConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.Man_Ana_UTE.UTEKey, dbo.Man_Ana_UTE.UTEName, dbo.Man_Ana_UTE.UTEPassword, dbo.Man_Ana_UTE.UTEDomainName, dbo.Man_Ana_UTE.TipoUteKey, 
+                         dbo.Man_Ana_UTE.AZIKey, dbo.Man_Ana_UTE.StatoRecKey, dbo.Man_Ana_UTE.UTELogin, dbo.Man_Ana_UTE.LANKey, DefRep.TipRepKey AS DefRepKey,
+                         dbo.Man_Ana_UTE.TipoUteCA_Key, dbo.Man_Ana_UTE.CDRKey
+FROM            (SELECT        MIN(TipoRepKey) AS TipRepKey, UTEKey
+                          FROM            dbo.Man_Ana_UTE_REP
+                          GROUP BY UTEKey) AS DefRep INNER JOIN
+                         dbo.Man_Ana_UTE INNER JOIN
+                         dbo.Man_Ana_Stato_Record ON dbo.Man_Ana_UTE.StatoRecKey = dbo.Man_Ana_Stato_Record.StatoRecKey ON 
+                         DefRep.UTEKey = dbo.Man_Ana_UTE.UTEKey
+WHERE        (dbo.Man_Ana_Stato_Record.StatoRecIsSelezionabile = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UTEKey" DataSetColumn="UTEKey" />
+              <Mapping SourceColumn="UTEName" DataSetColumn="UTEName" />
+              <Mapping SourceColumn="UTEPassword" DataSetColumn="UTEPassword" />
+              <Mapping SourceColumn="UTEDomainName" DataSetColumn="UTEDomainName" />
+              <Mapping SourceColumn="TipoUteKey" DataSetColumn="TipoUteKey" />
+              <Mapping SourceColumn="AZIKey" DataSetColumn="AZIKey" />
+              <Mapping SourceColumn="StatoRecKey" DataSetColumn="StatoRecKey" />
+              <Mapping SourceColumn="UTELogin" DataSetColumn="UTELogin" />
+              <Mapping SourceColumn="LANKey" DataSetColumn="LANKey" />
+              <Mapping SourceColumn="DefRepKey" DataSetColumn="DefRepKey" />
+              <Mapping SourceColumn="TipoUteCA_Key" DataSetColumn="TipoUteCA_Key" />
+              <Mapping SourceColumn="CDRKey" DataSetColumn="CDRKey" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="DBMaintenanceConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByLogin" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByLogin" GeneratorSourceName="FillByLogin" GetMethodModifier="Public" GetMethodName="GetDataByLogin" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByLogin" UserSourceName="FillByLogin">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.Man_Ana_UTE.AZIKey, dbo.Man_Ana_UTE.LANKey, dbo.Man_Ana_UTE.StatoRecKey, dbo.Man_Ana_UTE.TipoUteKey, dbo.Man_Ana_UTE.UTEDomainName, 
+                         DefRep.UTEKey, dbo.Man_Ana_UTE.UTELogin, dbo.Man_Ana_UTE.UTEName, dbo.Man_Ana_UTE.UTEPassword, DefRep.TipRepKey AS DefRepKey, dbo.Man_Ana_UTE.TipoUteCA_Key, dbo.Man_Ana_UTE.CDRKey
+FROM            (SELECT        MIN(TipoRepKey) AS TipRepKey, UTEKey
+                          FROM            dbo.Man_Ana_UTE_REP
+                          GROUP BY UTEKey) AS DefRep INNER JOIN
+                         dbo.Man_Ana_UTE ON DefRep.UTEKey = dbo.Man_Ana_UTE.UTEKey
+WHERE        (dbo.Man_Ana_UTE.UTELogin = @login)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="login" ColumnName="UTELogin" DataSourceName="DBMaintenance.dbo.Man_Ana_UTE" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@login" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="UTELogin" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DBMaintenanceConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByNomeUtente" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByNomeUtente" GeneratorSourceName="FillByNomeUtente" GetMethodModifier="Public" GetMethodName="GetDataByNomeUtente" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByNomeUtente" UserSourceName="FillByNomeUtente">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.Man_Ana_UTE.AZIKey, dbo.Man_Ana_UTE.LANKey, dbo.Man_Ana_UTE.StatoRecKey, dbo.Man_Ana_UTE.TipoUteKey, dbo.Man_Ana_UTE.UTEDomainName, 
+                         DefRep.UTEKey, dbo.Man_Ana_UTE.UTELogin, dbo.Man_Ana_UTE.UTEName, dbo.Man_Ana_UTE.UTEPassword, DefRep.TipRepKey AS DefRepKey, dbo.Man_Ana_UTE.TipoUteCA_Key, dbo.Man_Ana_UTE.CDRKey
+FROM            (SELECT        MIN(TipoRepKey) AS TipRepKey, UTEKey
+                          FROM            dbo.Man_Ana_UTE_REP
+                          GROUP BY UTEKey) AS DefRep INNER JOIN
+                         dbo.Man_Ana_UTE ON DefRep.UTEKey = dbo.Man_Ana_UTE.UTEKey
+WHERE        (dbo.Man_Ana_UTE.UTEName = @nome)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="nome" ColumnName="UTEName" DataSourceName="DBMaintenance.dbo.Man_Ana_UTE" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@nome" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="UTEName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="DBMaintenanceConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdatePassword" Modifier="Public" Name="UpdatePassword" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="UpdatePassword">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       dbo.Man_Ana_UTE
+SET                UTEPassword = @UTEPassword
+WHERE        (UTEKey = @UTEKey)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UTEPassword" ColumnName="UTEPassword" DataSourceName="DBMaintenance.dbo.Man_Ana_UTE" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@UTEPassword" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="UTEPassword" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="UTEKey" ColumnName="UTEKey" DataSourceName="DBMaintenance.dbo.Man_Ana_UTE" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@UTEKey" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="UTEKey" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Man_Ana_LANTableAdapter" GeneratorDataComponentClassName="Man_Ana_LANTableAdapter" Name="Man_Ana_LAN" UserDataComponentName="Man_Ana_LANTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBMaintenanceConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.Man_Ana_LAN.LANKey, dbo.Man_Ana_LAN.LANName, dbo.Man_Ana_LAN.StatoRecKey, dbo.Man_Ana_Stato_Record.StatoRecIsSelezionabile
+FROM            dbo.Man_Ana_LAN INNER JOIN
+                         dbo.Man_Ana_Stato_Record ON dbo.Man_Ana_LAN.StatoRecKey = dbo.Man_Ana_Stato_Record.StatoRecKey
+WHERE        (dbo.Man_Ana_Stato_Record.StatoRecIsSelezionabile = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="LANKey" DataSetColumn="LANKey" />
+              <Mapping SourceColumn="LANName" DataSetColumn="LANName" />
+              <Mapping SourceColumn="StatoRecKey" DataSetColumn="StatoRecKey" />
+              <Mapping SourceColumn="StatoRecIsSelezionabile" DataSetColumn="StatoRecIsSelezionabile" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Man_Ana_PermessiTableAdapter" GeneratorDataComponentClassName="Man_Ana_PermessiTableAdapter" Name="Man_Ana_Permessi" UserDataComponentName="Man_Ana_PermessiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DBMaintenanceConnectionString (Settings)" DbObjectName="DBMaintenance.dbo.Man_Ana_Permessi" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.Man_Ana_Permessi.PermessiName
+FROM            dbo.Man_Ana_Permessi INNER JOIN
+                         dbo.Man_Ana_Tipo_Utente_Permessi ON dbo.Man_Ana_Permessi.PermessiKey = dbo.Man_Ana_Tipo_Utente_Permessi.PermessiKey INNER JOIN
+                         dbo.Man_Ana_UTE ON dbo.Man_Ana_Tipo_Utente_Permessi.TipoUtenteKey = dbo.Man_Ana_UTE.TipoUteKey
+WHERE        (dbo.Man_Ana_UTE.UTEKey = @UTEKey)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="UTEKey" ColumnName="UTEKey" DataSourceName="DBMaintenance.dbo.Man_Ana_UTE" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@UTEKey" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="UTEKey" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PermessiName" DataSetColumn="PermessiName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsUTE" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsUTE" msprop:Generator_UserDSName="dsUTE">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Man_Ana_UTE" msprop:Generator_TableClassName="Man_Ana_UTEDataTable" msprop:Generator_TableVarName="tableMan_Ana_UTE" msprop:Generator_RowChangedName="Man_Ana_UTERowChanged" msprop:Generator_TablePropName="Man_Ana_UTE" msprop:Generator_RowDeletingName="Man_Ana_UTERowDeleting" msprop:Generator_RowChangingName="Man_Ana_UTERowChanging" msprop:Generator_RowEvHandlerName="Man_Ana_UTERowChangeEventHandler" msprop:Generator_RowDeletedName="Man_Ana_UTERowDeleted" msprop:Generator_RowClassName="Man_Ana_UTERow" msprop:Generator_UserTableName="Man_Ana_UTE" msprop:Generator_RowEvArgName="Man_Ana_UTERowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UTEKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUTEKey" msprop:Generator_ColumnPropNameInRow="UTEKey" msprop:Generator_ColumnPropNameInTable="UTEKeyColumn" msprop:Generator_UserColumnName="UTEKey" type="xs:int" />
+              <xs:element name="UTEName" msprop:Generator_ColumnVarNameInTable="columnUTEName" msprop:Generator_ColumnPropNameInRow="UTEName" msprop:Generator_ColumnPropNameInTable="UTENameColumn" msprop:Generator_UserColumnName="UTEName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UTEPassword" msprop:Generator_ColumnVarNameInTable="columnUTEPassword" msprop:Generator_ColumnPropNameInRow="UTEPassword" msprop:Generator_ColumnPropNameInTable="UTEPasswordColumn" msprop:Generator_UserColumnName="UTEPassword">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UTEDomainName" msprop:Generator_ColumnVarNameInTable="columnUTEDomainName" msprop:Generator_ColumnPropNameInRow="UTEDomainName" msprop:Generator_ColumnPropNameInTable="UTEDomainNameColumn" msprop:Generator_UserColumnName="UTEDomainName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TipoUteKey" msprop:Generator_ColumnVarNameInTable="columnTipoUteKey" msprop:Generator_ColumnPropNameInRow="TipoUteKey" msprop:Generator_ColumnPropNameInTable="TipoUteKeyColumn" msprop:Generator_UserColumnName="TipoUteKey" type="xs:int" minOccurs="0" />
+              <xs:element name="AZIKey" msprop:Generator_ColumnVarNameInTable="columnAZIKey" msprop:Generator_ColumnPropNameInRow="AZIKey" msprop:Generator_ColumnPropNameInTable="AZIKeyColumn" msprop:Generator_UserColumnName="AZIKey" type="xs:int" minOccurs="0" />
+              <xs:element name="StatoRecKey" msprop:Generator_ColumnVarNameInTable="columnStatoRecKey" msprop:Generator_ColumnPropNameInRow="StatoRecKey" msprop:Generator_ColumnPropNameInTable="StatoRecKeyColumn" msprop:Generator_UserColumnName="StatoRecKey" type="xs:int" minOccurs="0" />
+              <xs:element name="UTELogin" msprop:Generator_ColumnVarNameInTable="columnUTELogin" msprop:Generator_ColumnPropNameInRow="UTELogin" msprop:Generator_ColumnPropNameInTable="UTELoginColumn" msprop:Generator_UserColumnName="UTELogin">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LANKey" msprop:Generator_ColumnVarNameInTable="columnLANKey" msprop:Generator_ColumnPropNameInRow="LANKey" msprop:Generator_ColumnPropNameInTable="LANKeyColumn" msprop:Generator_UserColumnName="LANKey" type="xs:int" />
+              <xs:element name="DefRepKey" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDefRepKey" msprop:Generator_ColumnPropNameInRow="DefRepKey" msprop:Generator_ColumnPropNameInTable="DefRepKeyColumn" msprop:Generator_UserColumnName="DefRepKey" type="xs:int" minOccurs="0" />
+              <xs:element name="TipoUteCA_Key" msprop:Generator_ColumnVarNameInTable="columnTipoUteCA_Key" msprop:Generator_ColumnPropNameInRow="TipoUteCA_Key" msprop:Generator_ColumnPropNameInTable="TipoUteCA_KeyColumn" msprop:Generator_UserColumnName="TipoUteCA_Key" type="xs:int" minOccurs="0" />
+              <xs:element name="CDRKey" msprop:Generator_ColumnVarNameInTable="columnCDRKey" msprop:Generator_ColumnPropNameInRow="CDRKey" msprop:Generator_ColumnPropNameInTable="CDRKeyColumn" msprop:Generator_UserColumnName="CDRKey" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Man_Ana_LAN" msprop:Generator_TableClassName="Man_Ana_LANDataTable" msprop:Generator_TableVarName="tableMan_Ana_LAN" msprop:Generator_RowChangedName="Man_Ana_LANRowChanged" msprop:Generator_TablePropName="Man_Ana_LAN" msprop:Generator_RowDeletingName="Man_Ana_LANRowDeleting" msprop:Generator_RowChangingName="Man_Ana_LANRowChanging" msprop:Generator_RowEvHandlerName="Man_Ana_LANRowChangeEventHandler" msprop:Generator_RowDeletedName="Man_Ana_LANRowDeleted" msprop:Generator_RowClassName="Man_Ana_LANRow" msprop:Generator_UserTableName="Man_Ana_LAN" msprop:Generator_RowEvArgName="Man_Ana_LANRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LANKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnLANKey" msprop:Generator_ColumnPropNameInRow="LANKey" msprop:Generator_ColumnPropNameInTable="LANKeyColumn" msprop:Generator_UserColumnName="LANKey" type="xs:int" />
+              <xs:element name="LANName" msprop:Generator_ColumnVarNameInTable="columnLANName" msprop:Generator_ColumnPropNameInRow="LANName" msprop:Generator_ColumnPropNameInTable="LANNameColumn" msprop:Generator_UserColumnName="LANName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StatoRecKey" msprop:Generator_ColumnVarNameInTable="columnStatoRecKey" msprop:Generator_ColumnPropNameInRow="StatoRecKey" msprop:Generator_ColumnPropNameInTable="StatoRecKeyColumn" msprop:Generator_UserColumnName="StatoRecKey" type="xs:int" minOccurs="0" />
+              <xs:element name="StatoRecIsSelezionabile" msprop:Generator_ColumnVarNameInTable="columnStatoRecIsSelezionabile" msprop:Generator_ColumnPropNameInRow="StatoRecIsSelezionabile" msprop:Generator_ColumnPropNameInTable="StatoRecIsSelezionabileColumn" msprop:Generator_UserColumnName="StatoRecIsSelezionabile" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Man_Ana_Permessi" msprop:Generator_TableClassName="Man_Ana_PermessiDataTable" msprop:Generator_TableVarName="tableMan_Ana_Permessi" msprop:Generator_RowChangedName="Man_Ana_PermessiRowChanged" msprop:Generator_TablePropName="Man_Ana_Permessi" msprop:Generator_RowDeletingName="Man_Ana_PermessiRowDeleting" msprop:Generator_RowChangingName="Man_Ana_PermessiRowChanging" msprop:Generator_RowEvHandlerName="Man_Ana_PermessiRowChangeEventHandler" msprop:Generator_RowDeletedName="Man_Ana_PermessiRowDeleted" msprop:Generator_RowClassName="Man_Ana_PermessiRow" msprop:Generator_UserTableName="Man_Ana_Permessi" msprop:Generator_RowEvArgName="Man_Ana_PermessiRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PermessiName" msprop:Generator_ColumnVarNameInTable="columnPermessiName" msprop:Generator_ColumnPropNameInRow="PermessiName" msprop:Generator_ColumnPropNameInTable="PermessiNameColumn" msprop:Generator_UserColumnName="PermessiName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Man_Ana_UTE" />
+      <xs:field xpath="mstns:UTEKey" />
+    </xs:unique>
+    <xs:unique name="Man_Ana_LAN_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Man_Ana_LAN" />
+      <xs:field xpath="mstns:LANKey" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
