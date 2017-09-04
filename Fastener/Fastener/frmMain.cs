@@ -21,6 +21,8 @@ namespace Fastener
             label_language.Text = Program.language_;
             label_utente.Text = Program.CurrentUser.Nome;
 
+            //prova modifica rlavarin80
+
             CultureManager.ApplicationUICulture = CultureManager.ApplicationUICulture;
             if (Program.CurrentUser.Categoria == (int)Constants.LoginLevel.Operatore)
             {
